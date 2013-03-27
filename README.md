@@ -11,7 +11,7 @@ File Definition:
 bans.php - Primary banlist for /ban & /tempban commands.  
 ip-bans.php - Banlist for /ipban & /tempipban commands.  
 warnings.php - Warnings list. (Optional).  
-db_config - Databast connection config file.  
+db_config.php - Database connection config file.  
 style.php - Style header for standalone version.
 Installation:
 -
