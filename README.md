@@ -47,9 +47,10 @@ function loadMaxBansBanlistPage(banlist_file_path,banlist_element_id){
 	xmlhttp.open("GET",banlist_file_path,true);
 	xmlhttp.send();
 }
-loadMaxBansBanlistPage("bans.php","banlist-frame");
+loadMaxBansBanlistPage("http://example.com/bans.php","banlist-frame");
 </script>
 ```
+Note: loadMaxBansBanlistPage() function takes two arguments, 1st argument is URL of bans.php file, and 2nd argument is id of the html element, within which you want to place your banlist.
 And then put that container to the desired location on your webpage
 ```
 <div id="banlist-frame"></div>
