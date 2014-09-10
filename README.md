@@ -4,10 +4,10 @@ This is PHP bans list for bukkit plugin called MaxBans:
 http://dev.bukkit.org/server-mods/maxbans/
 File Definition:
 ----
-index.php - Web Page example for using with bans.php
-bans.php - Banlist table, displays /ban, /tempban, /rangeban, /ipban bans.
-includes/config.php - Database connection configuration file.  
-css/style.css - Stylesheet file
+1. index.php - Web Page example for using with bans.php
+2. bans.php - Banlist table, displays /ban, /tempban, /rangeban, /ipban bans.
+3. includes/config.php - Database connection configuration file.  
+4. css/style.css - Stylesheet file
 
 Installation:
 ----
