@@ -49,13 +49,10 @@ function loadMaxBansBanlistPage(banlist_file_path,banlist_element_id){
 }
 loadMaxBansBanlistPage("http://example.com/bans.php","banlist-frame");
 </script>
-```
-Note: loadMaxBansBanlistPage() function takes two arguments, 1st argument is URL of bans.php file, and 2nd argument is id of the html element, within which you want to place your banlist.
-And then put that container to the desired location on your webpage
-```
 <div id="banlist-frame"></div>
 ```
-----
-Author: crevice
+###### Note: loadMaxBansBanlistPage() function takes two arguments:
+* 1st argument is URL of bans.php file.
+* 2nd argument is id of the html element, within which you want to place your banlist.
 
-Mail me if you got any problems with it: ivnow1337@gmail.com
+----
