@@ -10,6 +10,10 @@ $config['db']['dbuser']="user";
 $config['db']['dbpass']="user_password";
 $config['db']['dbname']="maxbans_database";
 
+//Change only if you use SQLite database
+$config['db']['sqlite']=false;
+$config['db']['sqlite_path']="/path/to/bans.db";
+
 //Date format to display in the columns "time" and "expires"
 $config['dateformat']="d.m.Y / H:i";
 ?>

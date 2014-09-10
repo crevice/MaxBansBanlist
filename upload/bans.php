@@ -11,13 +11,18 @@
 				<tr><th>Login/IP/Range</th><th>Reason</th><th>Ban Type</th><th>Banned By</th><th>Time</th><th>Expires</th></tr>
 <?php
 include('./includes/config.php');
-$db = new PDO('mysql:host='.$config['db']['dbhost'].';port='.$config['db']['dbport'].';dbname='.$config['db']['dbname'], $config['db']['dbuser'], $config['db']['dbpass']);
+if($config['db']['sqlite']==false){
+	$db = new PDO('mysql:host='.$config['db']['dbhost'].';port='.$config['db']['dbport'].';dbname='.$config['db']['dbname'], $config['db']['dbuser'], $config['db']['dbpass']);
+}else{
+	$db = new PDO('sqlite:'.$config['db']['sqlite_path']);
+}
+$db->query("SET sql_mode=PIPES_AS_CONCAT;");
 $stmt = $db->prepare("
-	(SELECT 'Ban',name,reason,banner,time,expires FROM `bans`)
+	SELECT 'Ban',name,reason,banner,time,expires FROM `bans`
 	UNION
-	(SELECT 'IP Ban',ip,reason,banner,time,expires FROM `ipbans`)
+	SELECT 'IP Ban',ip,reason,banner,time,expires FROM `ipbans`
 	UNION
-	(SELECT 'Range Ban',CONCAT_WS(' - ', start, end),reason,banner,created,expires FROM `rangebans`)
+	SELECT 'Range Ban',start||' - '||end,reason,banner,created,expires FROM `rangebans`
 	ORDER BY time DESC;
 ");
 $stmt->execute();
