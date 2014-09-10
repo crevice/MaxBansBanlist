@@ -2,6 +2,13 @@ Description
 ----
 This is PHP bans list for bukkit plugin called MaxBans:  
 http://dev.bukkit.org/server-mods/maxbans/
+
+Features:
+----
+* Displays sorted list of bans. Regular bans are combined with IP Bans and Range Bans.
+* Ready for deployment, require only specify the parameters of the connection to the database in the configuration file.
+* Simple code, you can customize your banlist as you wish.
+
 File Definition:
 ----
 1. index.php - Web Page example for using with bans.php
@@ -11,8 +18,8 @@ File Definition:
 
 Minimum Requirements 
 ----
-1. PHP 5.2 or higher, with PDO & SQLite support
-2. MySQL
+* PHP 5.2 or higher, with PDO & SQLite support
+* MySQL
 
 Installation:
 ----
@@ -26,7 +33,7 @@ How-to: Using banlist at your webpage
 Load bans.php page with JavaScript:
 ```
 <script>
-function loadMaxBansBanlist(){
+function loadMaxBansBanlistPage(banlist_file_path,banlist_element_id){
 	if (window.XMLHttpRequest){
 		xmlhttp=new XMLHttpRequest();
 	}else{
@@ -34,13 +41,13 @@ function loadMaxBansBanlist(){
 	}
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			document.getElementById("banlist-frame").innerHTML=xmlhttp.responseText;
+			document.getElementById(banlist_element_id).innerHTML=xmlhttp.responseText;
 		}
 	}
-	xmlhttp.open("GET","path/to/bans.php",true);
+	xmlhttp.open("GET",banlist_file_path,true);
 	xmlhttp.send();
 }
-loadMaxBansBanlist();
+loadMaxBansBanlistPage("bans.php","banlist-frame");
 </script>
 ```
 And then put that container to the desired location on your webpage
