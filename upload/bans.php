@@ -13,10 +13,10 @@
 include('./includes/config.php');
 if($config['db']['sqlite']==false){
 	$db = new PDO('mysql:host='.$config['db']['dbhost'].';port='.$config['db']['dbport'].';dbname='.$config['db']['dbname'], $config['db']['dbuser'], $config['db']['dbpass']);
+	$db->query("SET sql_mode=PIPES_AS_CONCAT;");
 }else{
 	$db = new PDO('sqlite:'.$config['db']['sqlite_path']);
 }
-$db->query("SET sql_mode=PIPES_AS_CONCAT;");
 $stmt = $db->prepare("
 	SELECT 'Ban',name,reason,banner,time,expires FROM `bans`
 	UNION
