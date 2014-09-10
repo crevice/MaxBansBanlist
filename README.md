@@ -1,26 +1,48 @@
 Description
--
+----
 This is PHP bans list for bukkit plugin called MaxBans:  
 http://dev.bukkit.org/server-mods/maxbans/
-Version types:
--
-all_in_one_index - All banlist pages included in one file.  
-for_include_only - All banlist pages sorted in their own files.
 File Definition:
--
-bans.php - Primary banlist for /ban & /tempban commands.  
-ip-bans.php - Banlist for /ipban & /tempipban commands.  
-warnings.php - Warnings list. (Optional).  
-db_config.php - Database connection config file.  
-style.php - Style header for standalone version.
+----
+index.php - Web Page example for using with bans.php
+bans.php - Banlist table, displays /ban, /tempban, /rangeban, /ipban bans.
+includes/config.php - Database connection configuration file.  
+css/style.css - Stylesheet file
+
 Installation:
--
+----
 1. Put all files to your www folder   
-2. Edit db_config.php file and define your MySQL connection settings.  
-3. ...  
+2. Edit includes/config.php file and define your MySQL connection settings.  
+3. ...
 4. PROFIT!
 
--
-Author: XtenD.  
-Mail me if you got any problems with it:  
-xtendspb@gmail.com
+How-to: Using banlist at your webpage
+----
+Load bans.php page with JavaScript:
+```
+<script>
+function loadMaxBansBanlist(){
+	if (window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+	}else{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			document.getElementById("banlist-frame").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","path/to/bans.php",true);
+	xmlhttp.send();
+}
+loadMaxBansBanlist();
+</script>
+```
+And then put that container to the desired location on your webpage
+```
+<div id="banlist-frame"></div>
+```
+----
+Author: crevice
+
+Mail me if you got any problems with it: ivnow1337@gmail.com
