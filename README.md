@@ -11,7 +11,7 @@ File Definition:
 
 Minimum Requirements 
 ----
-1. PHP 5.2 or higher, with PDO support
+1. PHP 5.2 or higher, with PDO & SQLite support
 2. MySQL
 
 Installation:
