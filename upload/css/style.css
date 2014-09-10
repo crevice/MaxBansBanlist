@@ -1,0 +1,32 @@
+.maxbans-banlist{
+	background: #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+.maxbans-banlist table{
+    border-spacing: 0px;
+	border-collapse: collapse;
+	border: 0;
+	width: 100%;
+	font-size: 12px;
+}
+.maxbans-banlist th{
+	background: #517a8c;
+	color: #FFFFFF;
+	padding: 7px 7px 5px 7px;
+	text-align: left;
+	border: 0;
+}
+.maxbans-banlist td{
+	padding: 7px;
+	border: 0;
+	border-bottom: 1px #dadada dotted;
+}
+.gitcopy{
+	text-align: center;
+}
+.gitcopy a{
+	text-decoration: none;
+	font-size: 10px;
+	color: #517a8c;
+}
