@@ -9,6 +9,11 @@ File Definition:
 3. includes/config.php - Database connection configuration file.  
 4. css/style.css - Stylesheet file
 
+Minimum Requirements 
+----
+1. PHP 5.2 or higher, with PDO support
+2. MySQL
+
 Installation:
 ----
 1. Put all files to your www folder   
