@@ -24,7 +24,7 @@ Minimum Requirements
 Installation:
 ----
 1. Put all files to your www folder   
-2. Edit includes/config.php file and define your MySQL connection settings.  
+2. Edit includes/config.php file and define your Database connection settings.  
 3. ...
 4. PROFIT!
 
